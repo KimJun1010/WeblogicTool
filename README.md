@@ -59,5 +59,6 @@ jrmp类型的漏洞只能使用jrmp模块进行攻击，在vps上使用yso启动
 
 
 
-
+## Star趋势
+[![Star History Chart](https://api.star-history.com/svg?repos=KimJun1010/WeblogicTool&type=Date)](https://star-history.com/#KimJun1010/WeblogicTool&Date)
 
