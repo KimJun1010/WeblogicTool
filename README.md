@@ -62,7 +62,7 @@ jrmp类型的漏洞只能使用jrmp模块进行攻击，在vps上使用yso启动
 ![image](https://user-images.githubusercontent.com/49397311/232308083-058b42bb-3360-43ad-b90b-d9472ccfcdc0.png)
 
 
-## 协议批量探测
+## 协议探测
 目前支持批量探测T3、IIOP协议开放状态，内网IP地址（IIOP实现），常见的接口
 <img width="1012" alt="image" src="https://github.com/KimJun1010/WeblogicTool/assets/49397311/a7389507-5fd3-4f0e-b4e3-2f125e611846">
 
