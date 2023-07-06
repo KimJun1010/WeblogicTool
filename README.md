@@ -7,12 +7,13 @@
 
 ## 支持漏洞
 ```
+CVE-2023-21931（JNDI）
 CVE-2023-21839（JNDI）
 CVE-2020-2551（JRMP）
 CVE-2020-2551
 CVE-2020-2555
 CVE-2020-2883
-CVE-2020-14882未授权访问
+CVE-2020-14882 未授权访问
 CVE-2018-2894
 CVE-2018-2628（JRMP）
 CVE-2018-2893（JRMP）
@@ -30,18 +31,21 @@ CVE-2015-4852
 ## 漏洞检测
 支持最近的CVE-2023-21839漏洞T3&&IIOP，JNDI和JRMP类型漏洞需要填写自定义的dnslog地址，防止waf拦截常用的dnslog域名
 
+## 命令执行
+先检测漏洞是否存在
+<img width="894" alt="image" src="https://github.com/KimJun1010/WeblogicTool/assets/49397311/485e76d6-5ee7-46c5-b1c9-df2b694a8566">
+
+  
+ECHO类型漏洞，支持执行命令，支持自定义返回数据编码格式
+<img width="899" alt="image" src="https://github.com/KimJun1010/WeblogicTool/assets/49397311/0fc9d254-8d4f-4bc9-a5fa-020d4735744a">
+
+
 ## JRMP攻击
 jrmp类型的漏洞只能使用jrmp模块进行攻击，在vps上使用yso启动jrmp，工具中填入vps的jrmp地址即可  
 
 ```java -cp ./ysoserial.jar ysoserial.exploit.JRMPListener 9999 CommonsCollections3 'touch /tmp/1.txt' ```
-![image](https://user-images.githubusercontent.com/49397311/232307976-164f5777-f848-492c-b586-c50b503dfd5d.png)
+<img width="897" alt="image" src="https://github.com/KimJun1010/WeblogicTool/assets/49397311/2b5517ba-a3d5-4d9b-97cf-8d91839c29d1">
 
-## 命令执行
-先检测漏洞是否存在
-![image](https://user-images.githubusercontent.com/49397311/232307989-9ae53a16-6d05-4bf5-8267-fc215f331e4c.png)
-  
-  存在漏洞，可以执行命令，支持自定义返回数据编码格式
-  ![image](https://user-images.githubusercontent.com/49397311/232307999-46dea56c-c597-4f69-85ac-d861d352fd83.png)
 
 ## JNDI 
 与jrmp漏洞使用方法一样，需要启动vps服务端   
@@ -57,6 +61,10 @@ jrmp类型的漏洞只能使用jrmp模块进行攻击，在vps上使用yso启动
 2. 由于bcprov jar包签名问题，所以首次解密会出现异常：PBEWITHSHAAND128BITRC2-CBC SecretKeyFactory not available。需要手动下载 ```https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk15on/1.56/bcprov-jdk15on-1.56.jar``` 然后将文件存在本地安装的JDK路径下，例如 ```E:\Java\jdk1.8.0_60\jre\lib\ext```
 ![image](https://user-images.githubusercontent.com/49397311/232308083-058b42bb-3360-43ad-b90b-d9472ccfcdc0.png)
 
+
+## 协议批量探测
+目前支持批量探测T3、IIOP协议开放状态，内网IP地址（IIOP实现），常见的接口
+<img width="1012" alt="image" src="https://github.com/KimJun1010/WeblogicTool/assets/49397311/a7389507-5fd3-4f0e-b4e3-2f125e611846">
 
 
 ## Star趋势
